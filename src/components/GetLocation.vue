@@ -1,18 +1,25 @@
 <script setup>
+import WeatherReport from "./WeatherReport.vue";
 import { ref, onMounted } from "vue";
 const coords = ref();
 const geolocationBlockedByUser = ref(false);
 
 const getGeolocation = async () => {
   try {
-      // Check if geolocation is blocked by the user
+    // Check if geolocation is blocked by the user
     const position = await new Promise((resolve, reject) => {
       navigator.geolocation.getCurrentPosition(
-        (position) => resolve(position),
-        (error) => reject(error)
+        function (position) {
+          resolve(position);
+        },
+        function (error) {
+          reject(error);
+        }
       );
     });
-      // If geolocation is not blocked, get the coordinates
+    console.log(position);
+
+    // If geolocation is not blocked, get the coordinates
     coords.value = {
       latitude: position.coords.latitude,
       longitude: position.coords.longitude,
@@ -31,4 +38,11 @@ onMounted(async () => {
 });
 </script>
 
-<template></template>
+<template>
+  <div v-if="coords && !geolocationBlockedByUser">
+    {{ coords.latitude }} {{ coords.longitude }}
+  </div>
+  <div v-if="geolocationBlockedByUser">User denied access</div>
+
+  <WeatherReport :coords="coords" />
+</template>
