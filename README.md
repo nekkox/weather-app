@@ -1,10 +1,20 @@
+# General Info
+This project is simple app that is fetching data based on geolocation from Weather Api  
+Deployed app: https://mellifluous-puffpuff-0a3f7d.netlify.app/
+---
+# Technologies
+* Vue 3
+* Tailwind
+
+---
+
 # VueJS-with-Vite
 
 This template should help get you started developing with Vue 3 in Vite.
 
 ## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+[VSCode](https://code.visualstudio.com/)
 
 ## Customize configuration
 
