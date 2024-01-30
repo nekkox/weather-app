@@ -1,5 +1,6 @@
 <script setup>
 import WeatherReport from "./WeatherReport.vue";
+
 import { ref, onMounted } from "vue";
 const coords = ref();
 const geolocationBlockedByUser = ref(false);
