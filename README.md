@@ -1,6 +1,9 @@
-# General Info
+# General Info  
+
 This project is simple app that is fetching data based on geolocation from Weather Api  
-Deployed app: https://mellifluous-puffpuff-0a3f7d.netlify.app/
+
+Deployed app: https://mellifluous-puffpuff-0a3f7d.netlify.app/  
+
 ---
 # Technologies
 * Vue 3
