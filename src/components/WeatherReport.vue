@@ -11,7 +11,8 @@ const host = "https://api.weatherapi.com/v1/current.json?key=";
 async function fetchWeather() {
   const q = `${latitude},${longitude}`;
   const key = import.meta.env.VITE_APP_WEATHER_API_KEY;
-  const url = `${host}${key}&q=${q}`;
+    const key2 = '9a2862e9dc4b47a5a94191547242801'
+  const url = `${host}${key2}&q=${q}`;
   console.log("q", q);
 
   //Get data from api
