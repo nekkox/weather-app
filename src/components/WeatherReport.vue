@@ -11,23 +11,31 @@ async function fetchWeather() {
   const q = `${latitude},${longitude}`;
   const key = import.meta.env.VITE_APP_WEATHER_API_KEY;
   const url = `${host}${key}&q=${q}`;
-  console.log(url);
+  console.log("q", q);
 
-    //Get data from api
-  const res = await fetch(url);
-  const weatherData = await res.json();
-  return weatherData;
+  //Get data from api
+  try {
+    const res = await fetch(url);
+    const weatherData = await res.json();
+    return weatherData;
+  } catch (err) {
+    console.log("sorry, data not fetched");
+  }
 }
 
 onMounted(async () => {
+  const { latitude, longitude } = props.coords;
   const weatherResponse = await fetchWeather();
   data.value = weatherResponse;
 });
-
-console.log("Coords: ", props.coords);
 </script>
 
 <template>
-  <p>{{ data }}</p>
-  {{ console.log(data) }}
+  <div>
+    <article v-if="data && data.current">
+      <p>Data:</p>
+      {{ data.current }}
+    </article>
+    <div v-else>Loading...</div>
+  </div>
 </template>

@@ -40,7 +40,7 @@ onMounted(async () => {
 
 <template>
   <div v-if="coords && !geolocationBlockedByUser" :coords="coords">
-    Hellos
+    <h1 class="text-center">Hellos</h1>
     <p>{{ coords }}</p>
     <WeatherReport :coords="coords" />
   </div>
